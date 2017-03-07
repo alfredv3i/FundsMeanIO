@@ -35,7 +35,7 @@ module.exports = function(MeanUser) {
          */
         authCallback: function(req, res) {
           var payload = req.user;
-          var escaped = JSON.stringify(payload);      
+          var escaped = JSON.stringify(payload);
           escaped = encodeURI(escaped);
           // We are sending the payload inside the token
           var token = jwt.sign(escaped, config.secret, { expiresInMinutes: 60*5 });
@@ -94,7 +94,7 @@ module.exports = function(MeanUser) {
             }
 
             // Hard coded for now. Will address this with the user permissions system in v0.3.5
-            user.roles = ['authenticated'];
+            user.roles = ['authenticated', 'employee'];
             user.save(function(err) {
                 if (err) {
                     switch (err.code) {
@@ -172,7 +172,7 @@ module.exports = function(MeanUser) {
                 escaped = encodeURI(escaped);
                 var token = jwt.sign(escaped, config.secret, { expiresInMinutes: 60*5 });
                 res.json({ token: token });
-               
+
             });
         },
 
@@ -296,4 +296,3 @@ module.exports = function(MeanUser) {
         }
     };
 }
-

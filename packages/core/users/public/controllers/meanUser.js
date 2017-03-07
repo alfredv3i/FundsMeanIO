@@ -23,8 +23,11 @@ angular.module('mean.users')
 
 
       $rootScope.$on('loggedin', function(){
-        console.log('logged in');
-        $state.go('funds');
+        if (MeanUser.isAdmin) {
+            $state.go('adminpage');
+        } else {
+            $state.go('funds');
+        }
       });
 
       // This object will be filled by the form

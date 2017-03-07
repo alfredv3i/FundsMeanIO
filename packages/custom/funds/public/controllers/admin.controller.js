@@ -3,7 +3,7 @@ angular.module('mean.funds').controller('AdminCtrl', ['User', '$scope', '$state'
 
         var vm = this;
 
-        $scope.getFunds = function() {
+        $scope.getPendingFunds = function() {
             FundService.getPendingFunds()
                 .then(function(response) {
                     $scope.funds = response.data;

@@ -24,9 +24,9 @@
                     <li><a ui-sref='auth.login'>Log In</a></li>
                 </ul>
                 <ul class="navbar-nav nav" ng-show="hdrctr.hdrvars.authenticated">
-                  <li ng-hide="$root.isAdmin" class=""><a href="" ui-sref='fundpage'>My Funds</a> </li>
-                    <li ng-hide="$root.isAdmin" class=""><a href="" ui-sref='funds'>New Fund</a> </li>
-                    <li ng-show="$root.isAdmin" class=""><a href="" ui-sref='adminpage'>Dashoard</a> </li>
+                  <li ng-hide="hdrctr.hdrvars.isAdmin" class=""><a href="" ui-sref='fundpage'>My Funds</a> </li>
+                    <li ng-hide="hdrctr.hdrvars.isAdmin" class=""><a href="" ui-sref='funds'>New Fund</a> </li>
+                    <li ng-show="hdrctr.hdrvars.isAdmin" class=""><a href="" ui-sref='adminpage'>Dashoard</a> </li>
                     <li><a href="#" ng-click="hdrctr.logout()">Log Out</a></li>
                     <li class="dropdown" dropdown on-toggle="toggled(open)">
                         <a href="#" class="dropdown-toggle" dropdown-toggle>

@@ -40,10 +40,10 @@
 
         var fund = require('../controllers/FundController');
 
-        app.get('/api/funds/:id', fund.getFunds);
+        app.get('/api/funds/:id', auth.isMongoId, fund.getFunds);
         app.route('/api/funds')
-           .get(fund.getPendingFunds)
-           .post(fund.create)
-           .put(fund.update);
+           .get(auth.isMongoId, fund.getPendingFunds)
+           .post(auth.isMongoId, fund.create)
+           .put(auth.isMongoId,  fund.update);
     };
 })();

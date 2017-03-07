@@ -15,6 +15,7 @@ Funds.register(function(app, auth, database, circles) {
 
   //We enable routing. By default the Package Object is passed to the routes
   Funds.routes(app, auth, database, circles);
+  
 
   //We are adding a link to the main menu for all authenticated users
   Funds.menus.add({
