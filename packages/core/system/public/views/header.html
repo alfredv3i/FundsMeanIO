@@ -1,0 +1,65 @@
+<div class="navbar navbar-inverse navbar-fixed-top" data-role="navigation" ng-controller="HeaderController as hdrctr">
+    <div class="page-header">
+        <div class="inner">
+            <div class="logo pull-left">
+                <a class="navbar-brand" ui-sref="home" mean-token="'site-title'">Ideas2it</a>
+            </div>
+
+            <!-- <div class="left pull-left">
+                <ul class="navbar-nav nav">
+                    <li ui-route="/{{item.link}}" ng-class="{active: $uiRoute}" ng-repeat="item in hdrctr.menus.main">
+                    <a mean-token="item.link" ui-sref='{{item.link}}'>{{item.title}}</a>
+                    </li>
+                </ul>
+            </div> -->
+
+            <div class="right pull-right">
+                <div class="text-edit" ng-show="hdrctr.hdrvars.authenticated">
+                    <div class="pull-right" mean-token-editable></div>
+                    <div class="pull-right" mean-translate></div>
+                </div>
+                <ul class="navbar-nav nav auth-link" ng-show="!hdrctr.hdrvars.authenticated">
+                    <li><a ui-sref='auth.register'>Join</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a ui-sref='auth.login'>Log In</a></li>
+                </ul>
+                <ul class="navbar-nav nav" ng-show="hdrctr.hdrvars.authenticated">
+                  <li ng-hide="$root.isAdmin" class=""><a href="" ui-sref='fundpage'>My Funds</a> </li>
+                    <li ng-hide="$root.isAdmin" class=""><a href="" ui-sref='funds'>New Fund</a> </li>
+                    <li ng-show="$root.isAdmin" class=""><a href="" ui-sref='adminpage'>Dashoard</a> </li>
+                    <li><a href="#" ng-click="hdrctr.logout()">Log Out</a></li>
+                    <li class="dropdown" dropdown on-toggle="toggled(open)">
+                        <a href="#" class="dropdown-toggle" dropdown-toggle>
+                            <span>{{hdrctr.hdrvars.user.name}}</span> <b class=""></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" ng-click="hdrctr.logout()">Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+                <!-- <ul class="nav navbar-nav navbar-right">
+                    <li ng-show="inWelcome" class=""><a href="" ui-sref='home.login'>Login</a> </li>
+                    <li ng-show="inWelcome" class=""><a href="" ui-sref='home.register'>Register</a> </li>
+                    <li ng-show="$root.loggedIn" class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown"> Welcome! {{userName}}
+                    <b class="caret"> </b>
+                <ul class="dropdown-menu">
+                  <li ng-hide="$root.isAdmin" class=""><a href="" ui-sref='home.fundpage'>My Funds</a> </li>
+                    <li ng-hide="$root.isAdmin" class=""><a href="" ui-sref='home.funds'>New Fund</a> </li>
+                    <li ng-show="$root.isAdmin" class=""><a href="" ui-sref='home.adminpage'>Dashoard</a> </li>
+                    <li> <a href="" ng-click='logout()'>Logout</a> </li>
+                </ul>
+                </li>
+                </ul> -->
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
